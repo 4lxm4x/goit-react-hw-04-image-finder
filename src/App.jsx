@@ -38,7 +38,7 @@ useEffect(() => {
 
   const onSearchSubmit = request => {
     setRequest((prevRequest)=>{
-      if (prevRequest!==request) {
+      if (prevRequest!==request&&request) {
         setPage(1);
         setImages([]);
         return request;
