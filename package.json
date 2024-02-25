@@ -1,8 +1,8 @@
 {
-  "name": "goit-react-hw-04-images",
+  "name": "goit-react-hw-04-images-image-finder",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://4lxm4x.github.io/goit-react-hw-04-images/",
+  "homepage": "https://4lxm4x.github.io/goit-react-hw-04-image-finder/",
   "dependencies": {
     "@emotion/react": "^11.11.3",
     "@emotion/styled": "^11.11.0",
