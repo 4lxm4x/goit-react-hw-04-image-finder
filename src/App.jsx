@@ -1,5 +1,4 @@
 import SearchBar from 'components/Searchbar/Searchbar';
-import 'react-toastify/dist/ReactToastify.css';
 import './styles.css';
 import { useState,useEffect } from 'react';
 import * as API from './service/api';
