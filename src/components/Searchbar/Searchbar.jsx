@@ -1,22 +1,21 @@
-import "../../styles.css";
-import { useState } from "react";
-import { ImSearch } from "react-icons/im";
+import '../../styles.css';
+import { useState } from 'react';
+import { ImSearch } from 'react-icons/im';
 
 export default function SearchBar({ onSubmit }) {
+  const [input, setInput] = useState('');
 
-  const [input, setInput] = useState("");
-
-  const onFormSubmit = (e) => {
+  const onFormSubmit = e => {
     e.preventDefault();
     e.target.reset();
     onSubmit(input);
-    setInput("");
+    setInput('');
 
-    return; 
+    return;
   };
 
-  const onInput = (e) => {
-  setInput(e.target.value);
+  const onInput = e => {
+    setInput(e.target.value);
   };
 
   return (

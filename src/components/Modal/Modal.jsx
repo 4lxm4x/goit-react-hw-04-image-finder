@@ -1,16 +1,16 @@
-import { createPortal } from "react-dom";
-import "../../styles.css";
+import { createPortal } from 'react-dom';
+import '../../styles.css';
 
 export default function Modal({ onClose, onOverlayClick, largeImage, alt }) {
-  const modalRootEl = document.getElementById("modal-root");
+  const modalRootEl = document.getElementById('modal-root');
 
-  window.addEventListener("keydown", (key) => {
-    if (key.code === "Escape") {
+  window.addEventListener('keydown', key => {
+    if (key.code === 'Escape') {
       return onClose(false);
     }
   });
 
-  const overlayClick = (e) => {
+  const overlayClick = e => {
     if (e.currentTarget === e.target) {
       return onOverlayClick();
     }

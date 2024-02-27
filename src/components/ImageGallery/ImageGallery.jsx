@@ -1,16 +1,16 @@
-import ImageGalleryItem from "components/ImageGalleryItem/ImageGalleryItem";
-import Modal from "components/Modal/Modal";
-import { useState } from "react";
-import "../../styles.css";
+import ImageGalleryItem from 'components/ImageGalleryItem/ImageGalleryItem';
+import Modal from 'components/Modal/Modal';
+import { useState } from 'react';
+import '../../styles.css';
 
 export default function ImageGallery({ images }) {
   // state = { isModalOpen: false, modalImageURL: '', modalAlt: '' };
   const [modalOpen, setmodalOpen] = useState(false);
-  const [modalImageURL, setmodalImageURL] = useState("");
-  const [modalAlt, setmodalAlt] = useState("");
+  const [modalImageURL, setmodalImageURL] = useState('');
+  const [modalAlt, setmodalAlt] = useState('');
 
   const toggleModal = () => {
-    setmodalOpen((prevState) => {
+    setmodalOpen(prevState => {
       return !prevState;
     });
   };
@@ -42,7 +42,7 @@ export default function ImageGallery({ images }) {
           largeImage={modalImageURL}
           onOverlayClick={toggleModal}
           alt={modalAlt}
-          onClose={(close) => setmodalOpen(false)}
+          onClose={close => setmodalOpen(false)}
         />
       )}
     </div>
