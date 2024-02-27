@@ -28,16 +28,25 @@ export default function App() {
     }
   }, [request, page]);
 
-  const onSearchSubmit = request => {
-    setRequest(prevRequest => {
-      if (prevRequest !== request && request) {
-        setPage(1);
-        setImages([]);
-        return request;
-      } else {
-        return prevRequest;
-      }
-    });
+  // const onSearchSubmit = query => {
+  //   setRequest(prevRequest => {
+  //     if (query && query !== prevRequest) {
+  //       setPage(1);
+  //       setImages([]);
+  //       return query;
+  //     } else {
+  //       return prevRequest;
+  //     }
+  //   });
+  // };
+
+  const onSearchSubmit = query => {
+    if (!query.trim()) return;
+    if (query !== request) {
+      setPage(1);
+      setImages([]);
+      setRequest(query);
+    }
   };
 
   const loadMore = () => {

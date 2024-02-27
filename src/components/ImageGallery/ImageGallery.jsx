@@ -5,18 +5,18 @@ import '../../styles.css';
 
 export default function ImageGallery({ images }) {
   // state = { isModalOpen: false, modalImageURL: '', modalAlt: '' };
-  const [modalOpen, setmodalOpen] = useState(false);
-  const [modalImageURL, setmodalImageURL] = useState('');
+  const [modalOpen, setModalOpen] = useState(false);
+  const [modalImageURL, setModalImageURL] = useState('');
   const [modalAlt, setmodalAlt] = useState('');
 
   const toggleModal = () => {
-    setmodalOpen(prevState => {
+    setModalOpen(prevState => {
       return !prevState;
     });
   };
 
   const handleImageClick = (largeImageURL, tags) => {
-    setmodalImageURL(largeImageURL);
+    setModalImageURL(largeImageURL);
     setmodalAlt(tags);
 
     toggleModal();
@@ -42,7 +42,7 @@ export default function ImageGallery({ images }) {
           largeImage={modalImageURL}
           onOverlayClick={toggleModal}
           alt={modalAlt}
-          onClose={close => setmodalOpen(false)}
+          onClose={close => setModalOpen(false)}
         />
       )}
     </div>

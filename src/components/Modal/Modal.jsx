@@ -1,14 +1,23 @@
 import { createPortal } from 'react-dom';
+import { useEffect } from 'react';
 import '../../styles.css';
 
 export default function Modal({ onClose, onOverlayClick, largeImage, alt }) {
   const modalRootEl = document.getElementById('modal-root');
 
-  window.addEventListener('keydown', key => {
+  useEffect(() => {
+    window.addEventListener('keydown', handleUserKeyPress);
+
+    return () => {
+      window.removeEventListener('keydown', handleUserKeyPress);
+    };
+  }, []);
+
+  const handleUserKeyPress = key => {
     if (key.code === 'Escape') {
       return onClose(false);
     }
-  });
+  };
 
   const overlayClick = e => {
     if (e.currentTarget === e.target) {
